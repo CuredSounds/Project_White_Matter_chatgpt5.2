@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Epic Systems Corporation//MyChart//EN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:WP-24DNXEBTg30Q7Hso3-2FWO5xLQ-3D-3D-24P7I1KwpZtH53bxDzOspgLcEOQ-2Feh2lJEN19b3Mzg-2BTE-3D@mychart.trihealth.com
+ORGANIZER;CN=MyChart:mailto:donotreply@trihealth.com
+DTSTAMP:20260212T135230Z
+DTSTART:20260519T171500Z
+DTEND:20260519T173000Z
+SUMMARY;LANGUAGE=en-US:OFFICE VISIT with Asimul Ansari\, MD
+LOCATION;LANGUAGE=en-US:100 Arrow Springs Blvd # 2500\, Lebanon OH 45036-7002
+DESCRIPTION;LANGUAGE=en-US:Phone: 513-246-2400\n\n\nBring photo ID\n\nBring insurance card\n\nBring list of medications\n\nBring co-pay\n\nArrive 15 minutes early\n\nBring Covid Vaccination Card\n
+END:VEVENT
+END:VCALENDAR

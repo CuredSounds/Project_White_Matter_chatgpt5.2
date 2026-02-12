@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Epic Systems Corporation//MyChart//EN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:WP-24Hv41igLCJRj6ptPw2LyHTg-3D-3D-24-2FDunoLYi1V3-2FcfRCpu7FQY-2FomJmzAjJqGocAvadekWc-3D@mychart.trihealth.com
+ORGANIZER;CN=MyChart:mailto:donotreply@trihealth.com
+DTSTAMP:20260212T135306Z
+DTSTART:20260915T180000Z
+DTEND:20260915T183000Z
+SUMMARY;LANGUAGE=en-US:OFFICE VISIT with Mary Inwood\, MD
+LOCATION;LANGUAGE=en-US:1184 W Locust St\, Wilmington OH 45177-2009
+DESCRIPTION;LANGUAGE=en-US:Phone: 937-382-1616\n\n\nBring photo ID\n\nBring insurance card\n\nBring list of medications\n\nBring co-pay\n\nArrive 15 minutes early\n\nBring Covid Vaccination Card\n
+END:VEVENT
+END:VCALENDAR
