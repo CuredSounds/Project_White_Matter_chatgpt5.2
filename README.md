@@ -56,5 +56,12 @@ The application allows you to export your logs to **CSV format**, which can be e
 
 ### File Structure
 - `app.py`: The main tracker application.
-- `data/regimen_data.json`: Local storage for your logs.
-- `documents/`: Source material and research papers.
+- `tracker_storage.py`: Data IO, validation, migration, and logging helpers.
+- `data/json/regimen_data.json`: Canonical local storage for logs.
+- `data/logs/app.log`: Application log file.
+- `documents/clinical/`: Clinician-facing summaries.
+- `documents/transcripts/`: AI conversation exports and working notes.
+
+### Notes
+- Legacy data at `data/regimen_data.json` is auto-migrated on first load.
+- Keep secrets out of git-tracked files. Use `gcp.env.example` as a template.

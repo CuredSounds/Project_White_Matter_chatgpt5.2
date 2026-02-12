@@ -1,30 +1,14 @@
 import streamlit as st
 import pandas as pd
-import json
-import os
 from datetime import datetime
 import plotly.express as px
+from tracker_storage import DEFAULT_DATA_FILE, load_data, save_data
 
 # Configuration
-DATA_FILE = "data/regimen_data.json"
 PAGE_TITLE = "White Matter Regimen Tracker"
 PAGE_ICON = "🧠"
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON, layout="wide")
-
-# --- Data Handling ---
-def load_data():
-    if not os.path.exists(DATA_FILE):
-        return []
-    try:
-        with open(DATA_FILE, "r") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, FileNotFoundError):
-        return []
-
-def save_data(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
 
 # --- UI Components ---
 def main():
@@ -83,8 +67,11 @@ def main():
                     }
                     current_data = load_data()
                     current_data.append(new_entry)
-                    save_data(current_data)
-                    st.success("Saved!")
+                    try:
+                        save_data(current_data)
+                        st.success("Saved!")
+                    except Exception:
+                        st.error("Could not save regimen entry. Check logs and try again.")
 
         with col_view:
             data = load_data()
@@ -139,8 +126,11 @@ def main():
                 }
                 current_data = load_data()
                 current_data.append(lab_entry)
-                save_data(current_data)
-                st.success("Lab Data Saved")
+                try:
+                    save_data(current_data)
+                    st.success("Lab Data Saved")
+                except Exception:
+                    st.error("Could not save lab entry. Check logs and try again.")
 
         # Lab Visualization
         data = load_data()
@@ -187,6 +177,7 @@ def main():
             df = pd.DataFrame(data)
             csv = df.to_csv(index=False).encode('utf-8')
             st.download_button("Download All Data (CSV)", csv, "medical_regimen_log.csv", "text/csv")
+        st.caption(f"Data file: {DEFAULT_DATA_FILE}")
 
 if __name__ == "__main__":
     main()

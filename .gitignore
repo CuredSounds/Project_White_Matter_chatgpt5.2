@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Local env/secrets
+.env
+*.env
+gcp.env
+
+# Local app outputs
+data/logs/
+data/exports/
